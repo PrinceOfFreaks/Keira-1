@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@100;200;300;500;600;700;800;900&display=swap');
+
+/* @font-face {
+  font-family: "ORGGraphikBold";
+  src: url(../public/fonts/GraphikBold.otf);
+} */
+
+.goldentext {
+  background: linear-gradient(-45deg,#ffd580,#f0a925,#ffe56f,#f6b547);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: gradient 2s linear infinite;
+}
+.scrollbar-simple::-webkit-scrollbar {
+  width: 20px;
+}
+.scrollbar-simple::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.scrollbar-simple::-webkit-scrollbar-thumb {
+  background-color: #6e6e6e;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+.scrollbar-simple::-webkit-scrollbar-thumb:hover {
+  background-color: #d6dee1;
+}
+
+
+
+@layer base {
+  body {
+    @apply font-primary text-white  bg-[#161414] bg-no-repeat;
+
+  }
+  h1 {
+    @apply font-primary text-white
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-primary text-white;
+  }
+  a {
+    @apply text-white font-semibold hover:text-accent-primary_hover transition;
+  }
+  .btn {
+    @apply text-lg h-[60px] px-[30px] rounded-full transition text-white;
+  }
+  .btn-primary {
+    @apply bg-accent-primary hover:bg-accent-primary_hover;
+  }
+  .btn-secondary {
+    @apply bg-accent-secondary hover:bg-accent-secondary_hover;
+  }
+  .btn-quaternary {
+    @apply bg-white text-base font-bold text-white drop-shadow-primary hover:bg-accent-primary_hover hover:text-white;
+  }
+  .btn-yellow {
+    @apply bg-gradient-to-b from-[#fff76d] to-[#ffdf28] bg-no-repeat text-base font-bold text-primary drop-shadow-primary;
+  }
+  .h1 {
+    @apply text-[40px] xl:text-[80px] font-bold leading-[1.1];
+  }
+  .h2 {
+    @apply text-[40px] font-bold leading-tight;
+  }
+  .h3 {
+    @apply text-[24px];
+  }
+  .lead {
+    @apply text-lg  font-primary font-medium leading-relaxed;
+  }
+  .underline-after{
+    @apply relative tracking-[1px] hover:text-primary
+  }
+  .underline-after::after{
+    @apply absolute content-[''] bg-[#6BA14B] h-[3px] w-[0%] left-0 -bottom-[6px]  rounded-xl duration-300
+  }
+  .underline-after:hover::after{
+    @apply w-[100%] 
+  }
+}
