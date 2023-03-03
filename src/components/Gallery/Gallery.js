@@ -22,7 +22,7 @@ const Cards = React.lazy(() => import('./Cards'));
 
 const tabsData = [
     {
-        label: 'AZUKI',
+        label: 'Collection 1',
 //         content:[
 //             {
 //                 image:"https://azk.imgix.net/images/ac073d60-7f28-496d-9ca5-b97acdc63d03.png?w=1024",
@@ -115,7 +115,7 @@ const tabsData = [
 //         ]
     },
     {
-        label: 'BEANZ',
+        label: 'Collection 1',
 //         content:[
 //             {
 //                 image:"https://azk.imgix.net/images/8c5cf8d9-706d-4c26-9d3e-af4fd2854027.png?fm=jpg&w=1024",
