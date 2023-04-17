@@ -8,7 +8,7 @@ export  const GetData=(page,setpage,setdata,endpoint,setlength,activeTabIndex,se
             console.log(endpoint?.searchApi)
 
             setpage(page)
-            if(endpoint?.searchApi==='/get-avatars'){
+            if(endpoint?.searchApi=='/get-avatars'){
                     axiosInstance
                     .get(`/get-avatars/?page=${page}`)
                     .then((response)=>{

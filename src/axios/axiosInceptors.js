@@ -1,7 +1,11 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-  baseURL: "https://keira2.vercel.app/api",
+  baseURL: "https://keira-back-end.vercel.app/api",
+  headers: {
+    "Content-type": "application/json; charset=UTF-8",
+    "access-control-allow-origin": "*",
+  }
 });
 
 axiosInstance.interceptors.request.use(
