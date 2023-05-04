@@ -29,7 +29,7 @@ const Cards = ({setlength,activeTabIndex, setdata,data ,endpoint,setendpoint,Sea
     return (
         <>
             <InfiniteScroll
-                dataLength={page *20  || 0} //This is important field to render the next data
+                dataLength={page *10  || 0} //This is important field to render the next data
                 next={fetchScroll}
                 hasMore={true}
                 loader={<h4>Loading...</h4>}

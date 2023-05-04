@@ -3,7 +3,8 @@ import React, { useEffect, useState,Suspense } from 'react'
 import Filter from './Filter'
 import { OffCanvas, OffCanvasMenu, OffCanvasBody } from "react-offcanvas";
 import axiosInstance from '../../axios/axiosInceptors';
-const Cards = React.lazy(() => import('./Cards'));
+// const Cards = React.lazy(() => import('./Cards'));
+import Cards from "./Cards"
 
 // const FilterTabs = [
 //     { label: "icon", icon: "https://www.azuki.com/_next/image?url=%2Ffiltericons%2FWhite%2F0%2FType.png&w=64&q=75" },
@@ -22,7 +23,7 @@ const Cards = React.lazy(() => import('./Cards'));
 
 const tabsData = [
     {
-        label: 'Collection 1',
+        label: 'Avatars',
 //         content:[
 //             {
 //                 image:"https://azk.imgix.net/images/ac073d60-7f28-496d-9ca5-b97acdc63d03.png?w=1024",
@@ -115,7 +116,7 @@ const tabsData = [
 //         ]
     },
     {
-        label: 'Collection 1',
+        label: 'Cars',
 //         content:[
 //             {
 //                 image:"https://azk.imgix.net/images/8c5cf8d9-706d-4c26-9d3e-af4fd2854027.png?fm=jpg&w=1024",
@@ -178,6 +179,8 @@ const Gallery = () => {
                     axiosInstance
                     .get(`/get-cars/?page=${page}`)
                     .then((response)=>{
+                    console.log(response.cached, "cache f g")
+
                         setdata(response?.data)
                         setlength(response?.data?.length)
                         setendpoint({
@@ -195,17 +198,17 @@ const Gallery = () => {
             }
     },[refresh])
 
-    const handleScroll=()=>{
-        if(window.innerHeight+document.documentElement.scrollTop + 2>=document.documentElement.scrollHeight){
-            setpage(page+1);            
-        }
-    }
+    // const handleScroll=()=>{
+    //     if(window.innerHeight+document.documentElement.scrollTop + 2>=document.documentElement.scrollHeight){
+    //         setpage(page+1);            
+    //     }
+    // }
     
-    React.useEffect(()=>{
-        window.addEventListener('scroll',handleScroll)
+    // React.useEffect(()=>{
+    //     window.addEventListener('scroll',handleScroll)
 
-        return ()=>window.removeEventListener("scroll",handleScroll)
-    },[])
+    //     return ()=>window.removeEventListener("scroll",handleScroll)
+    // },[])
 
     const clickHandler=(idx)=>{
         
@@ -336,7 +339,7 @@ const Gallery = () => {
                     </div>
                     <div className='lg:mt-4 mt-2'>
                       <Suspense fallback = { <div> Please Wait... </div>} >
-                        <Cards setlength={setlength} data={data} setdata={setdata} activeTabIndex={activeTabIndex} setendpoint={setendpoint} endpoint={endpoint} SearchValue={SearchValue}  setSearchFilter={setSearchFilter} selectfilter={selectfilter} page={page} activeTabIndex={activeTabIndex} setpage={setpage}/>
+                        <Cards setlength={setlength} data={data} setdata={setdata} activeTabIndex={activeTabIndex} setendpoint={setendpoint} endpoint={endpoint} SearchValue={SearchValue}  setSearchFilter={setSearchFilter} selectfilter={selectfilter} page={page}  setpage={setpage}/>
                       </Suspense>
                     </div>
                 </div>

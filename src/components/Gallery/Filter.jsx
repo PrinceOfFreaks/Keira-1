@@ -215,7 +215,7 @@ const Filter = ({ TabsData,setTabs,activeTabIndex,setdata,setlength ,page,select
                             <details className="border-b border-opacity-10  py-0 border-white opacity-100">
                                 <summary className="w-full py-2 lg:py-3 flex items-center justify-between text-sm hover:opacity-80  after:content-plus">
                                     <span className="font-600 flex items-center relative text-[11px] lg:text-xs uppercase ">
-                                        <img alt="" src={Icons.find(icon=>icon.label===item)?.icon}  className="lg:w-7 lg:h-7 h-5 w-5 mr-2" />
+                                        {/* <img alt="" src={Icons.find(icon=>icon.label===item)?.icon}  className="lg:w-7 lg:h-7 h-5 w-5 mr-2" /> */}
                                         {item}
                                     </span>
                                 </summary>
